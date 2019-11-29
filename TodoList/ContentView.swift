@@ -57,10 +57,13 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            List {
-                Text("Stack title")
-                ScrollView(.horizontal, showsIndicators: false) {
-                    VStack(alignment: .leading) {
+            VStack {
+                VStack(alignment: .leading) {
+                    
+                    Text("Days")
+                        .padding(.leading, 10)
+                    
+                    ScrollView(.horizontal, showsIndicators: false) {
                         HStack {
                             ForEach(days) { day in
                                 Button(action: {
@@ -68,24 +71,24 @@ struct ContentView: View {
                                 }) {
                                     DayView(day: day)
                                 }
-                                
                             }
                         }
                     }
+                    .frame(height: 150.0)
+                    .background(Color.green)
                 }
-                .frame(height: 200.0)
-                .background(Color.green)
                 
-                
-                ForEach(tasks) { task in
-                    NavigationLink(destination: DetailView()) {
-                        TaskView(task: task)
+                List {
+                    ForEach(tasks) { task in
+                        NavigationLink(destination: DetailView()) {
+                            TaskView(task: task)
+                        }
                     }
                 }
+                .navigationBarTitle(Text("Todo list"))
+                .padding(.leading, -15)
+                .padding(.trailing, -15)
             }
-            .navigationBarTitle(Text("Todo list"))
-            .padding(.leading, -10)
-            .padding(.trailing, -10)
         }
     }
 }
@@ -104,9 +107,10 @@ struct DayView: View {
     
     var body: some View {
         Text(day.text)
-            .frame(width: 100, height: 180)
+            .frame(width: 100, height: 130)
             .background(Color.blue)
             .foregroundColor(Color.red)
+            .cornerRadius(10)
     }
 }
 
