@@ -8,59 +8,9 @@
 
 import SwiftUI
 
-struct Day: Identifiable {
-    let id = UUID()
-    let text: String
-    let tasks: [Task]
-}
-
-struct Task: Identifiable {
-    let id = UUID()
-    let title: String
-    let description: String = ""
-    
-    
-    static var testTasks1 = [
-        Task(title: "Task 4"),
-        Task(title: "Task 5"),
-        Task(title: "Task 6"),
-        Task(title: "Task 7"),
-        Task(title: "Task 8"),
-    ]
-    
-    static var testTasks2 = [
-        Task(title: "Task 2"),
-        Task(title: "Task 9"),
-        Task(title: "Task 10")
-    ]
-    
-    static var testTasks3 = [
-        Task(title: "Task 1"),
-        Task(title: "Task 2"),
-        Task(title: "Task 3"),
-        Task(title: "Task 4"),
-        Task(title: "Task 5")
-    ]
-}
-
 struct ContentView: View {
     
-    var days: [Day] = [
-        Day(text:"Monday", tasks: Task.testTasks1),
-        Day(text:"Tuesday", tasks: Task.testTasks2),
-        Day(text:"Wednesday", tasks: Task.testTasks3),
-        Day(text:"Thursday", tasks: Task.testTasks1),
-        Day(text:"Friday", tasks: Task.testTasks2),
-        Day(text:"Saturday", tasks: Task.testTasks3),
-        Day(text:"Sunday", tasks: Task.testTasks1),
-        Day(text:"Monday", tasks: Task.testTasks2),
-        Day(text:"Tuesday", tasks: Task.testTasks3)
-    ]
-    
-    @State var listTasks: [Task] = [
-        Task(title: "Task 1"),
-        Task(title: "Task 2")
-    ]
+    @State var viewModel = CalendarViewModel()
     
     var body: some View {
         NavigationView {
@@ -73,7 +23,7 @@ struct ContentView: View {
                     
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack {
-                            ForEach(days) { day in
+                            ForEach(viewModel.days) { day in
                                 Button(action: {
                                     self.updateTasks(for: day)
                                 }) {
@@ -86,7 +36,7 @@ struct ContentView: View {
                     .background(Color.green)
                 }
                 
-                ForEach(listTasks) { task in
+                ForEach(viewModel.listTasks) { task in
                     NavigationLink(destination: DetailView()) {
                         TaskView(task: task)
                     }
@@ -101,37 +51,7 @@ struct ContentView: View {
     
     private func updateTasks(for day: Day) {
         debugPrint("TODO")
-        self.listTasks = day.tasks
-    }
-}
-
-struct TaskView: View {
-    
-    let task: Task
-    
-    var body: some View {
-        
-        HStack {
-            Button(action: {
-                print("TODO2")
-            }) {
-                Text("✅")
-            }
-            .padding(Edge.Set(arrayLiteral: .leading, .trailing), 10)
-            Text(task.title)
-        }
-    }
-}
-
-struct DayView: View {
-    let day: Day
-    
-    var body: some View {
-        Text(day.text)
-            .frame(width: 110, height: 150)
-            .background(Color.blue)
-            .foregroundColor(Color.red)
-            .cornerRadius(10)
+        self.viewModel.listTasks = day.tasks
     }
 }
 
