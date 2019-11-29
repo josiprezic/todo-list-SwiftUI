@@ -107,7 +107,7 @@ struct DayView: View {
     
     var body: some View {
         Text(day.text)
-            .frame(width: 100, height: 130)
+            .frame(width: 110, height: 150)
             .background(Color.blue)
             .foregroundColor(Color.red)
             .cornerRadius(10)
@@ -116,14 +116,6 @@ struct DayView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(days: [
-            Day(text:"Monday"),
-            Day(text:"Monday"),
-            Day(text:"Monday"),
-            Day(text:"Monday"),
-            Day(text:"Monday"),
-            Day(text:"Monday"),
-            Day(text:"Monday")
-        ])
+        ContentView()
     }
 }
