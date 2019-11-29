@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		D77ABCBE239144E500DA75F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77ABCBD239144E500DA75F7 /* AppDelegate.swift */; };
 		D77ABCC0239144E500DA75F7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77ABCBF239144E500DA75F7 /* SceneDelegate.swift */; };
-		D77ABCC2239144E500DA75F7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77ABCC1239144E500DA75F7 /* ContentView.swift */; };
+		D77ABCC2239144E500DA75F7 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77ABCC1239144E500DA75F7 /* CalendarView.swift */; };
 		D77ABCC4239144EB00DA75F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D77ABCC3239144EB00DA75F7 /* Assets.xcassets */; };
 		D77ABCC7239144EB00DA75F7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D77ABCC6239144EB00DA75F7 /* Preview Assets.xcassets */; };
 		D77ABCCA239144EB00DA75F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D77ABCC8239144EB00DA75F7 /* LaunchScreen.storyboard */; };
@@ -25,7 +25,7 @@
 		D77ABCBA239144E500DA75F7 /* TodoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D77ABCBD239144E500DA75F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D77ABCBF239144E500DA75F7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D77ABCC1239144E500DA75F7 /* ContentView.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; tabWidth = 4; };
+		D77ABCC1239144E500DA75F7 /* CalendarView.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; tabWidth = 4; };
 		D77ABCC3239144EB00DA75F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D77ABCC6239144EB00DA75F7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D77ABCC9239144EB00DA75F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -89,7 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				D77ABCD12391498A00DA75F7 /* DetailView.swift */,
-				D77ABCC1239144E500DA75F7 /* ContentView.swift */,
+				D77ABCC1239144E500DA75F7 /* CalendarView.swift */,
 				E272F9042391CA0A003D59E7 /* DayView.swift */,
 				E272F9062391CA4B003D59E7 /* TaskView.swift */,
 				D77ABCC5239144EB00DA75F7 /* Preview Content */,
@@ -210,7 +210,7 @@
 				D77ABCD22391498A00DA75F7 /* DetailView.swift in Sources */,
 				E272F9012391B7E1003D59E7 /* Day.swift in Sources */,
 				D77ABCC0239144E500DA75F7 /* SceneDelegate.swift in Sources */,
-				D77ABCC2239144E500DA75F7 /* ContentView.swift in Sources */,
+				D77ABCC2239144E500DA75F7 /* CalendarView.swift in Sources */,
 				E272F9032391B807003D59E7 /* Task.swift in Sources */,
 				E272F8FF2391B78A003D59E7 /* CalendarViewModel.swift in Sources */,
 			);

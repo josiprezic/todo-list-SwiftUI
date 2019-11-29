@@ -1,14 +1,14 @@
 //
-//  ContentView.swift
+//  CalendarView.swift
 //  TodoList
 //
 //  Created by Josip Rezic on 29/11/2019.
-//  Copyright © 2019 feelmorelabs. All rights reserved.
+//  Copyright © 2019 Josip Rezic. All rights reserved.
 //
 
 import SwiftUI
 
-struct ContentView: View {
+struct CalendarView: View {
     
     @State var viewModel = CalendarViewModel()
     
@@ -56,8 +56,8 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct CalendarView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        CalendarView()
     }
 }
