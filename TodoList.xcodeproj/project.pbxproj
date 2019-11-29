@@ -68,19 +68,11 @@
 		D77ABCBC239144E500DA75F7 /* TodoList */ = {
 			isa = PBXGroup;
 			children = (
-				D77ABCBD239144E500DA75F7 /* AppDelegate.swift */,
-				D77ABCBF239144E500DA75F7 /* SceneDelegate.swift */,
-				D77ABCC1239144E500DA75F7 /* ContentView.swift */,
-				D77ABCC3239144EB00DA75F7 /* Assets.xcassets */,
-				D77ABCC8239144EB00DA75F7 /* LaunchScreen.storyboard */,
-				D77ABCCB239144EB00DA75F7 /* Info.plist */,
-				D77ABCC5239144EB00DA75F7 /* Preview Content */,
-				D77ABCD12391498A00DA75F7 /* DetailView.swift */,
-				E272F8FE2391B78A003D59E7 /* CalendarViewModel.swift */,
-				E272F9002391B7E1003D59E7 /* Day.swift */,
-				E272F9022391B807003D59E7 /* Task.swift */,
-				E272F9042391CA0A003D59E7 /* DayView.swift */,
-				E272F9062391CA4B003D59E7 /* TaskView.swift */,
+				E272F90A2391D3B2003D59E7 /* SupportingFiles */,
+				E272F9082391D375003D59E7 /* Views */,
+				E272F90C2391D484003D59E7 /* ViewModels */,
+				E272F9092391D396003D59E7 /* Models */,
+				E272F90B2391D3E2003D59E7 /* Resources */,
 			);
 			path = TodoList;
 			sourceTree = "<group>";
@@ -91,6 +83,54 @@
 				D77ABCC6239144EB00DA75F7 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E272F9082391D375003D59E7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D77ABCD12391498A00DA75F7 /* DetailView.swift */,
+				D77ABCC1239144E500DA75F7 /* ContentView.swift */,
+				E272F9042391CA0A003D59E7 /* DayView.swift */,
+				E272F9062391CA4B003D59E7 /* TaskView.swift */,
+				D77ABCC5239144EB00DA75F7 /* Preview Content */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E272F9092391D396003D59E7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E272F9022391B807003D59E7 /* Task.swift */,
+				E272F9002391B7E1003D59E7 /* Day.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E272F90A2391D3B2003D59E7 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				D77ABCBD239144E500DA75F7 /* AppDelegate.swift */,
+				D77ABCBF239144E500DA75F7 /* SceneDelegate.swift */,
+				D77ABCCB239144EB00DA75F7 /* Info.plist */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		E272F90B2391D3E2003D59E7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D77ABCC3239144EB00DA75F7 /* Assets.xcassets */,
+				D77ABCC8239144EB00DA75F7 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E272F90C2391D484003D59E7 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				E272F8FE2391B78A003D59E7 /* CalendarViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -309,10 +349,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"TodoList/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"TodoList/Views/Preview Content\"";
 				DEVELOPMENT_TEAM = TLWQ546V2V;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = TodoList/Info.plist;
+				INFOPLIST_FILE = TodoList/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -329,10 +369,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"TodoList/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"TodoList/Views/Preview Content\"";
 				DEVELOPMENT_TEAM = TLWQ546V2V;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = TodoList/Info.plist;
+				INFOPLIST_FILE = TodoList/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
