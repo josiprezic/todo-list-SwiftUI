@@ -11,48 +11,56 @@ import SwiftUI
 struct Day: Identifiable {
     let id = UUID()
     let text: String
+    let tasks: [Task]
 }
 
 struct Task: Identifiable {
     let id = UUID()
     let title: String
     let description: String = ""
+    
+    
+    static var testTasks1 = [
+    Task(title: "Task 4"),
+    Task(title: "Task 5"),
+    Task(title: "Task 6"),
+    Task(title: "Task 7"),
+    Task(title: "Task 8"),
+    ]
+    
+    static var testTasks2 = [
+    Task(title: "Task 2"),
+    Task(title: "Task 9"),
+    Task(title: "Task 10")
+    ]
+    
+    static var testTasks3 = [
+    Task(title: "Task 1"),
+    Task(title: "Task 2"),
+    Task(title: "Task 3"),
+    Task(title: "Task 4"),
+    Task(title: "Task 5")
+    ]
 }
 
 struct ContentView: View {
+
     
     var days: [Day] = [
-        Day(text:"Monday"),
-        Day(text:"Tuesday"),
-        Day(text:"Wednesday"),
-        Day(text:"Thursday"),
-        Day(text:"Friday"),
-        Day(text:"Saturday"),
-        Day(text:"Sunday"),
-        Day(text:"Monday"),
-        Day(text:"Tuesday"),
+        Day(text:"Monday", tasks: Task.testTasks1),
+        Day(text:"Tuesday", tasks: Task.testTasks2),
+        Day(text:"Wednesday", tasks: Task.testTasks3),
+        Day(text:"Thursday", tasks: Task.testTasks1),
+        Day(text:"Friday", tasks: Task.testTasks2),
+        Day(text:"Saturday", tasks: Task.testTasks3),
+        Day(text:"Sunday", tasks: Task.testTasks1),
+        Day(text:"Monday", tasks: Task.testTasks2),
+        Day(text:"Tuesday", tasks: Task.testTasks3)
     ]
     
-    var tasks: [Task] = [
+    @State var listTasks: [Task] = [
         Task(title: "Task 1"),
-        Task(title: "Task 2"),
-        Task(title: "Task 3"),
-        Task(title: "Task 4"),
-        Task(title: "Task 5"),
-        Task(title: "Task 6"),
-        Task(title: "Task 7"),
-        Task(title: "Task 8"),
-        Task(title: "Task 9"),
-        Task(title: "Task 10"),
-        Task(title: "Task 11"),
-        Task(title: "Task 12"),
-        Task(title: "Task 13"),
-        Task(title: "Task 14"),
-        Task(title: "Task 15"),
-        Task(title: "Task 16"),
-        Task(title: "Task 17"),
-        Task(title: "Task 18"),
-        Task(title: "Task 19")
+        Task(title: "Task 2")
     ]
     
     var body: some View {
@@ -67,7 +75,7 @@ struct ContentView: View {
                         HStack {
                             ForEach(days) { day in
                                 Button(action: {
-                                    print("TEST")
+                                    self.updateTasks(for: day)
                                 }) {
                                     DayView(day: day)
                                 }
@@ -79,7 +87,7 @@ struct ContentView: View {
                 }
                 
                 List {
-                    ForEach(tasks) { task in
+                    ForEach(listTasks) { task in
                         NavigationLink(destination: DetailView()) {
                             TaskView(task: task)
                         }
@@ -90,6 +98,11 @@ struct ContentView: View {
                 .padding(.trailing, -15)
             }
         }
+    }
+    
+    private func updateTasks(for day: Day) {
+        debugPrint("TODO")
+        self.listTasks = day.tasks
     }
 }
 
