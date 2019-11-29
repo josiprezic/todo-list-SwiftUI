@@ -21,30 +21,29 @@ struct Task: Identifiable {
     
     
     static var testTasks1 = [
-    Task(title: "Task 4"),
-    Task(title: "Task 5"),
-    Task(title: "Task 6"),
-    Task(title: "Task 7"),
-    Task(title: "Task 8"),
+        Task(title: "Task 4"),
+        Task(title: "Task 5"),
+        Task(title: "Task 6"),
+        Task(title: "Task 7"),
+        Task(title: "Task 8"),
     ]
     
     static var testTasks2 = [
-    Task(title: "Task 2"),
-    Task(title: "Task 9"),
-    Task(title: "Task 10")
+        Task(title: "Task 2"),
+        Task(title: "Task 9"),
+        Task(title: "Task 10")
     ]
     
     static var testTasks3 = [
-    Task(title: "Task 1"),
-    Task(title: "Task 2"),
-    Task(title: "Task 3"),
-    Task(title: "Task 4"),
-    Task(title: "Task 5")
+        Task(title: "Task 1"),
+        Task(title: "Task 2"),
+        Task(title: "Task 3"),
+        Task(title: "Task 4"),
+        Task(title: "Task 5")
     ]
 }
 
 struct ContentView: View {
-
     
     var days: [Day] = [
         Day(text:"Monday", tasks: Task.testTasks1),
@@ -65,7 +64,8 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            VStack {
+            
+            List {
                 VStack(alignment: .leading) {
                     
                     Text("Days")
@@ -86,17 +86,16 @@ struct ContentView: View {
                     .background(Color.green)
                 }
                 
-                List {
-                    ForEach(listTasks) { task in
-                        NavigationLink(destination: DetailView()) {
-                            TaskView(task: task)
-                        }
+                ForEach(listTasks) { task in
+                    NavigationLink(destination: DetailView()) {
+                        TaskView(task: task)
                     }
                 }
-                .navigationBarTitle(Text("Todo list"))
-                .padding(.leading, -15)
-                .padding(.trailing, -15)
             }
+            .navigationBarTitle(Text("Todo list"))
+            .padding(.leading, -15)
+            .padding(.trailing, -15)
+            
         }
     }
     
@@ -111,7 +110,16 @@ struct TaskView: View {
     let task: Task
     
     var body: some View {
-        Text(task.title)
+        
+        HStack {
+            Button(action: {
+                print("TODO2")
+            }) {
+                Text("✅")
+            }
+            .padding(Edge.Set(arrayLiteral: .leading, .trailing), 10)
+            Text(task.title)
+        }
     }
 }
 
