@@ -9,14 +9,19 @@
 import SwiftUI
 
 struct DetailView: View {
+    let task: Task
+    
     var body: some View {
-        Text("Hello, World!")
-            .background(Color.green)
+        
+        Form {
+            Text(task.title)
+            Text(task.description)
+        }
     }
 }
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailView()
+        DetailView(task: Task(title: ""))
     }
 }

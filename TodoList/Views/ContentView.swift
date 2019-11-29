@@ -29,6 +29,7 @@ struct ContentView: View {
                                 }) {
                                     DayView(day: day)
                                 }
+                                .buttonStyle(PlainButtonStyle())
                             }
                         }
                     }
@@ -37,7 +38,7 @@ struct ContentView: View {
                 }
                 
                 ForEach(viewModel.listTasks) { task in
-                    NavigationLink(destination: DetailView()) {
+                    NavigationLink(destination: DetailView(task: task)) {
                         TaskView(task: task)
                     }
                 }
