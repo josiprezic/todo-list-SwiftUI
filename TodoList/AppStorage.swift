@@ -2,8 +2,8 @@
 //  AppStorage.swift
 //  TodoList
 //
-//  Created by Korisnik on 30/11/2019.
-//  Copyright © 2019 feelmorelabs. All rights reserved.
+//  Created by Josip Rezić on 30/11/2019.
+//  Copyright © 2019 Josip Rezić. All rights reserved.
 //
 
 import Foundation

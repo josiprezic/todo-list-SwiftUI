@@ -2,8 +2,8 @@
 //  SceneDelegate.swift
 //  TodoList
 //
-//  Created by Josip Rezic on 29/11/2019.
-//  Copyright © 2019 feelmorelabs. All rights reserved.
+//  Created by Josip Rezić on 29/11/2019.
+//  Copyright © 2019 Josip Rezić. All rights reserved.
 //
 
 import UIKit
