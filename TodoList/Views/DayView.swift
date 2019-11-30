@@ -13,7 +13,7 @@ struct DayView: View {
     
     var body: some View {
         ZStack {
-            Image("3")
+            Image(day.imageName)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .frame(width: 140, height: 150)

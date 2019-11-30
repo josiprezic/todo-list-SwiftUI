@@ -9,6 +9,7 @@
 import Foundation
 
 struct Day: Identifiable {
+    let imageName = "\(Int.random(in: 1...20))"
     let id = UUID()
     let text: String
     let tasks: [Task]

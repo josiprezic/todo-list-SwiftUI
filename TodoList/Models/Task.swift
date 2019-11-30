@@ -12,6 +12,7 @@ struct Task: Identifiable {
     let id = UUID()
     let title: String
     let description: String = ""
+    var finished: Bool = false
     
     
     static var testTasks1 = [

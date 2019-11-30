@@ -10,18 +10,17 @@ import SwiftUI
 
 struct TaskView: View {
     
-    let task: Task
+    @State var task: Task
     
     var body: some View {
         
         HStack {
             Button(action: {
-                print("TODO2")
+                self.task.finished.toggle()
             }) {
-                Text("✅")
+                Text(task.finished ? "✅" : "🟩")
             }
             .frame(width: 60, height: 40, alignment: .center)
-            //.background(Color.red)
             .buttonStyle(BorderlessButtonStyle())
             
             NavigationLink(destination: DetailView(task: task)) {
@@ -31,7 +30,6 @@ struct TaskView: View {
                 }
                 .padding(.leading, -10)
                 .frame(height: 40, alignment: .leading)
-                //.background(Color.red)
                 .buttonStyle(BorderlessButtonStyle())
             }
             .padding(.trailing, 10)
