@@ -34,7 +34,7 @@ struct CalendarView: View {
                         }
                     }
                     .frame(height: 150.0)
-                    .background(Color.green)
+                    //.background(Color.green)
                 }
                 
                 ForEach(viewModel.listTasks) { task in

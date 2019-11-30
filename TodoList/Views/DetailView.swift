@@ -22,6 +22,6 @@ struct DetailView: View {
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailView(task: Task(title: ""))
+        DetailView(task: Task(date: Date(), title: ""))
     }
 }

@@ -19,6 +19,8 @@
 		E272F9032391B807003D59E7 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = E272F9022391B807003D59E7 /* Task.swift */; };
 		E272F9052391CA0A003D59E7 /* DayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E272F9042391CA0A003D59E7 /* DayView.swift */; };
 		E272F9072391CA4B003D59E7 /* TaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E272F9062391CA4B003D59E7 /* TaskView.swift */; };
+		E2C204BC2392A64900EBCAF1 /* AppStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C204BB2392A64900EBCAF1 /* AppStorage.swift */; };
+		E2C204BE2392A6B500EBCAF1 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C204BD2392A6B500EBCAF1 /* Date.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		E272F9022391B807003D59E7 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		E272F9042391CA0A003D59E7 /* DayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayView.swift; sourceTree = "<group>"; };
 		E272F9062391CA4B003D59E7 /* TaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskView.swift; sourceTree = "<group>"; };
+		E2C204BB2392A64900EBCAF1 /* AppStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStorage.swift; sourceTree = "<group>"; };
+		E2C204BD2392A6B500EBCAF1 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +77,8 @@
 				E272F90C2391D484003D59E7 /* ViewModels */,
 				E272F9092391D396003D59E7 /* Models */,
 				E272F90B2391D3E2003D59E7 /* Resources */,
+				E2C204BB2392A64900EBCAF1 /* AppStorage.swift */,
+				E2C204BD2392A6B500EBCAF1 /* Date.swift */,
 			);
 			path = TodoList;
 			sourceTree = "<group>";
@@ -211,8 +217,10 @@
 				E272F9012391B7E1003D59E7 /* Day.swift in Sources */,
 				D77ABCC0239144E500DA75F7 /* SceneDelegate.swift in Sources */,
 				D77ABCC2239144E500DA75F7 /* CalendarView.swift in Sources */,
+				E2C204BE2392A6B500EBCAF1 /* Date.swift in Sources */,
 				E272F9032391B807003D59E7 /* Task.swift in Sources */,
 				E272F8FF2391B78A003D59E7 /* CalendarViewModel.swift in Sources */,
+				E2C204BC2392A64900EBCAF1 /* AppStorage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,19 +10,9 @@ import Foundation
 
 struct CalendarViewModel {
     
-    var days: [Day] = [
-        Day(text:"Monday", tasks: Task.testTasks1),
-        Day(text:"Tuesday", tasks: Task.testTasks2),
-        Day(text:"Wednesday", tasks: Task.testTasks3),
-        Day(text:"Thursday", tasks: Task.testTasks1),
-        Day(text:"Friday", tasks: Task.testTasks2),
-        Day(text:"Saturday", tasks: Task.testTasks3),
-        Day(text:"Sunday", tasks: Task.testTasks1),
-        Day(text:"Monday", tasks: Task.testTasks2),
-        Day(text:"Tuesday", tasks: Task.testTasks3)
-    ]
-    
     var currentDayIndex: UUID?
+    
+    var days = AppStorage.days
     
     var listTasks: [Task] {
         let currentDay = days.first { $0.id == currentDayIndex ?? days.first!.id }

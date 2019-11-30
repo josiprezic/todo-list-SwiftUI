@@ -39,6 +39,6 @@ struct TaskView: View {
 
 struct TaskView_Previews: PreviewProvider {
     static var previews: some View {
-        TaskView(task: Task(title: ""))
+        TaskView(task: Task(date: Date(), title: ""))
     }
 }
