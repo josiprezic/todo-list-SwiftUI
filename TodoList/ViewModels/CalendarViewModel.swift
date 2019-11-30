@@ -22,8 +22,10 @@ struct CalendarViewModel {
         Day(text:"Tuesday", tasks: Task.testTasks3)
     ]
     
-    var listTasks: [Task] = [
-        Task(title: "Task 1"),
-        Task(title: "Task 2")
-    ]
+    var currentDayIndex: UUID?
+    
+    var listTasks: [Task] {
+        let currentDay = days.first { $0.id == currentDayIndex ?? days.first!.id }
+        return currentDay?.tasks ?? []
+    }
 }

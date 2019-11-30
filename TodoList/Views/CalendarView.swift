@@ -44,13 +44,20 @@ struct CalendarView: View {
             .navigationBarTitle(Text("Todo list"))
             .padding(.leading, -15)
             .padding(.trailing, -15)
-            
+            .navigationBarItems(trailing:
+                Button("Add") {
+                    self.addTaskTapped()
+            })
         }
     }
     
     private func updateTasks(for day: Day) {
         debugPrint("TODO")
-        self.viewModel.listTasks = day.tasks
+        self.viewModel.currentDayIndex = day.id
+    }
+    
+    private func addTaskTapped() {
+        debugPrint("TODO4")
     }
 }
 
