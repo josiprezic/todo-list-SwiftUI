@@ -38,9 +38,7 @@ struct CalendarView: View {
                 }
                 
                 ForEach(viewModel.listTasks) { task in
-                    NavigationLink(destination: DetailView(task: task)) {
-                        TaskView(task: task)
-                    }
+                    TaskView(task: task)
                 }
             }
             .navigationBarTitle(Text("Todo list"))

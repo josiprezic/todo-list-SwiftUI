@@ -13,9 +13,9 @@ struct DetailView: View {
     
     var body: some View {
         
-        Form {
+        List {
             Text(task.title)
-            Text(task.description)
+            Text("Description" + task.description)
         }
     }
 }

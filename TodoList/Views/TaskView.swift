@@ -20,8 +20,21 @@ struct TaskView: View {
             }) {
                 Text("✅")
             }
-            .padding(Edge.Set(arrayLiteral: .leading, .trailing), 10)
-            Text(task.title)
+            .frame(width: 60, height: 40, alignment: .center)
+            //.background(Color.red)
+            .buttonStyle(BorderlessButtonStyle())
+            
+            NavigationLink(destination: DetailView(task: task)) {
+                HStack {
+                    Text(task.title)
+                    Spacer()
+                }
+                .padding(.leading, -10)
+                .frame(height: 40, alignment: .leading)
+                //.background(Color.red)
+                .buttonStyle(BorderlessButtonStyle())
+            }
+            .padding(.trailing, 10)
         }
     }
 }
