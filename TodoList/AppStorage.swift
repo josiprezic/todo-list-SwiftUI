@@ -6,9 +6,12 @@
 //  Copyright © 2019 Josip Rezić. All rights reserved.
 //
 
-import Foundation
+import Combine
+import SwiftUI
 
-struct AppStorage {
+class AppStorage: ObservableObject {
+    
+    // let didChange = PassthroughSubject<AppStorage, Never>()
     
     static var days: [Day] {
         var result: [Day] = []
@@ -42,6 +45,7 @@ struct AppStorage {
         Task(date: Date.day(withOffset: 0), title: "Task 10")
         ] {
         didSet {
+            //didChange.send(self)
             saveState()
         }
     }
@@ -58,6 +62,7 @@ struct AppStorage {
         debugPrint("Saving new state")
         
         let encoder = JSONEncoder()
+        debugPrint("Numer of checked tasks: \(tasks.filter { $0.finished }.count)")
         if let encoded = try? encoder.encode(tasks) {
             let defaults = UserDefaults.standard
             defaults.set(encoded, forKey: "tasks")
@@ -76,5 +81,26 @@ struct AppStorage {
         }
         debugPrint("State restored.")
         tasks = decoded
+        debugPrint("Numer of checked tasks: \(tasks.filter { $0.finished }.count)")
+    }
+}
+
+
+@propertyWrapper
+struct UserDefaultValue<Value: Codable> {
+
+    let key: String
+    let defaultValue: Value
+
+    var wrappedValue: Value {
+        get {
+            let data = UserDefaults.standard.data(forKey: key)
+            let value = data.flatMap { try? JSONDecoder().decode(Value.self, from: $0) }
+            return value ?? defaultValue
+        }
+        set {
+            let data = try? JSONEncoder().encode(newValue)
+            UserDefaults.standard.set(data, forKey: key)
+        }
     }
 }

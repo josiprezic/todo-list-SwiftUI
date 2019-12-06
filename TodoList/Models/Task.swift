@@ -14,4 +14,10 @@ struct Task: Identifiable, Codable {
     let title: String
     let description: String = ""
     var finished: Bool = false
+    
+    
+    init(date: Date, title: String) {
+        self.date = date
+        self.title = title
+    }
 }

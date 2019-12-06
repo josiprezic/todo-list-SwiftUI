@@ -44,10 +44,9 @@ struct CalendarView: View {
             .navigationBarTitle(Text("Todo list"))
             .padding(.leading, -15)
             .padding(.trailing, -15)
-            .navigationBarItems(trailing:
-                Button("Add") {
-                    self.addTaskTapped()
-            })
+            .navigationBarItems(
+                leading: Button("Restore") { AppStorage.restoreState() },
+                trailing: Button("Add") { self.addTaskTapped() })
         }
     }
     
@@ -58,7 +57,7 @@ struct CalendarView: View {
     
     private func addTaskTapped() {
         debugPrint("TODO4")
-        //AppStorage.saveState()
+        AppStorage.saveState()
         //AppStorage.restoreState()
     }
 }

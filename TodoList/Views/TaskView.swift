@@ -9,14 +9,15 @@
 import SwiftUI
 
 struct TaskView: View {
-    
-    @State var task: Task
+    @EnvironmentObject var appStorage: AppStorage
+    let task: Task
     
     var body: some View {
         
         HStack {
             Button(action: {
-                self.task.finished.toggle()
+                //self.task.finished.toggle()
+                self.toggleFinished()
             }) {
                 Text(task.finished ? "✅" : "🟩")
             }
@@ -34,6 +35,15 @@ struct TaskView: View {
             }
             .padding(.trailing, 10)
         }
+    }
+    
+    private func toggleFinished() {
+        let index = AppStorage.tasks.firstIndex { task in task.id == self.task.id }
+        guard let checkedIndex = index else {
+            return
+        }
+        debugPrint("Index: \(checkedIndex)")
+        AppStorage.tasks[checkedIndex].finished.toggle()
     }
 }
 
